@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<br>
+<div class="card text-bg-light mb-3" style="max-width: 25rem;">
+    <div class="card-header">
+        <strong>
+        {{proyecto_filtrado.fecha}} {{proyecto_filtrado.ubicacion}} {{proyecto_filtrado.categoria}}
+    </strong>
+    </div>
+    <div class="card-body">
+      <!--<h5 class="card-title">Success card title</h5>-->
+      <p class="card-text">
+        <strong>Producto: </strong>{{proyecto_filtrado.producto}}
+      </p>
+      <p class="card-text">
+        <strong>Medida: </strong>{{proyecto_filtrado.medida}}
+      </p>
+      <p class="card-text">
+        <strong>Cantidad: </strong>{{proyecto_filtrado.cantidad}}
+      </p>
+      <p class="card-text">
+        <strong>Precio: </strong>{{proyecto_filtrado.precio}}
+      </p>
+      <p class="card-text">
+        <strong>Gastos: </strong>{{proyecto_filtrado.gastos}}
+      </p>
+      <p class="card-text">
+        <strong>Usuario: </strong>{{proyecto_filtrado.usuario}}
+      </p>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'ver-datos' %}" class="btn btn-secondary">Regresar</a>
+        <a href="{% url 'borrar-datos' proyecto_filtrado.id %}" class="btn btn-danger">Borrar</a>
+    </div>
+</div>
+
+{% endblock %}

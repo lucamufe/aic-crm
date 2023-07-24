@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<!--<div class="col-md-6 offset-md-3">-->
+{% if user.is_authenticated %}
+    <br>
+    <h5>Detalle Ingreso y Costo Proyectos AIC</h5>
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Ubicación</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Medida</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Gastos</th>
+            <th scope="col">Usuario</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% if costoProyectos %}
+                {% for record in costoProyectos %}
+                    <tr>
+                        <td data-title="ID"><a href="{% url 'detalle-datos' record.id %}">{{record.id}}</a></td>
+                        <td data-title="Fecha">{{record.fecha}}</td>
+                        <td data-title="Ubicación">{{record.ubicacion}}</td>
+                        <td data-title="Categoría">{{record.categoria}}</td>
+                        <td data-title="Producto">{{record.producto}}</td>
+                        <td data-title="Medida">{{record.medida}}</td>
+                        <td data-title="Cantidad" data-type="decimal">{{record.cantidad}}</td>
+                        <td data-title="Precio" data-type="decimal">{{record.precio}}</td>
+                        <td data-title="Gastos" data-type="decimal">{{record.gastos}}</td>
+                        <td data-title="Usuario">{{record.usuario}}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    
+{% else %}
+    {% url 'home' %}    
+{% endif %}
+<!--</div>-->
+{% endblock %}
