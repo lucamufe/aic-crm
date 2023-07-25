@@ -9,4 +9,5 @@ urlpatterns = [
     path('detalle-datos/<int:pk>', views.detalle_datos, name='detalle-datos'),
     path('borrar-datos/<int:pk>', views.borrar_datos, name='borrar-datos'),
     path('insertar-datos', views.insertar_datos, name='insertar-datos'),
+    path('editar-datos/<int:pk>', views.editar_datos, name='editar-datos'),
 ]

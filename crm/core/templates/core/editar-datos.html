@@ -3,17 +3,17 @@
 <div class="col-md-6 offset-md-3">
 {% if user.is_authenticated %}
     <br>
-    <h5>Crear Registro</h5>
+    <h5>Editar Registro</h5>
     <br>
 
-    <form method="POST" action="{% url 'insertar-datos' %}">
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
 
 
     <br>
         <div class="field padding-bottom--15">
-            <input type="submit" name="submit" value="Insertar">
+            <input type="submit" name="submit" value="Actualizar">
         </div>
     </form>
 

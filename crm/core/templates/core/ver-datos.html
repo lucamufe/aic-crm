@@ -3,7 +3,7 @@
 <!--<div class="col-md-6 offset-md-3">-->
 {% if user.is_authenticated %}
     <br>
-    <h5>Detalle Ingreso y Costo Proyectos AIC</h5>
+    <h5>Datos Proyectos</h5>
     <table>
         <thead>
           <tr>
@@ -15,7 +15,9 @@
             <th scope="col">Medida</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
+            <th scope="col">Total Bruto</th>
             <th scope="col">Gastos</th>
+            <th scope="col">Total Neto</th>
             <th scope="col">Usuario</th>
           </tr>
         </thead>
@@ -32,7 +34,9 @@
                         <td data-title="Medida">{{record.medida}}</td>
                         <td data-title="Cantidad" data-type="decimal">{{record.cantidad}}</td>
                         <td data-title="Precio" data-type="decimal">{{record.precio}}</td>
+                        <td data-title="TotBruto" data-type="decimal">{{record.tot_bruto}}</td>
                         <td data-title="Gastos" data-type="decimal">{{record.gastos}}</td>
+                        <td data-title="TotNeto" data-type="decimal">{{record.tot_neto}}</td>
                         <td data-title="Usuario">{{record.usuario}}</td>
                     </tr>
                 {% endfor %}

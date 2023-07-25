@@ -14,4 +14,12 @@ class CostoProyectos(models.Model):
 
     def __str__(self):
         return(f"{self.ubicacion} {self.producto}")
+    
+    @property
+    def tot_bruto(self):
+        return "{0:.2f}".format(self.cantidad * self.precio)
+
+    @property
+    def tot_neto(self):
+        return "{0:.2f}".format((self.cantidad * self.precio) - self.gastos)
 
