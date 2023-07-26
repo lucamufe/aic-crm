@@ -83,3 +83,19 @@ def editar_datos(request, pk):
     else:
         messages.success(request, "Debe iniciar sesión y tener privilegios de administrador para editar un registro.")
         return redirect('home')
+    
+def grafica_porcentaje(request):
+    if request.user.is_authenticated:
+        #proyecto_filtrado = CostoProyectos.objects.get(id=pk)
+        return render(request, 'core/grafica-porcentaje.html', {})
+    else:
+        messages.success(request, "Debe iniciar sesión para visualizar la gráfica de porcentajes.")
+        return redirect('home')
+
+def grafica_absoluto(request):
+    if request.user.is_authenticated and request.user.is_staff:
+        #proyecto_filtrado = CostoProyectos.objects.get(id=pk)
+        return render(request, 'core/grafica-absoluto.html', {})
+    else:
+        messages.success(request, "Debe iniciar sesión y tener privilegios de administrador para visualizar la gráfica de porcentajes.")
+        return redirect('home')    

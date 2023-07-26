@@ -7,7 +7,6 @@
     <table>
         <thead>
           <tr>
-            <th scope="col">ID</th>
             <th scope="col">Fecha</th>
             <th scope="col">Ubicación</th>
             <th scope="col">Categoría</th>
@@ -26,8 +25,7 @@
             {% if costoProyectos %}
                 {% for record in costoProyectos %}
                     <tr>
-                        <td data-title="ID"><a href="{% url 'detalle-datos' record.id %}">{{record.id}}</a></td>
-                        <td data-title="Fecha">{{record.fecha}}</td>
+                        <td data-title="Fecha"><a href="{% url 'detalle-datos' record.id %}">{{record.fecha}}</a></td>
                         <td data-title="Ubicación">{{record.ubicacion}}</td>
                         <td data-title="Categoría">{{record.categoria}}</td>
                         <td data-title="Producto">{{record.producto}}</td>

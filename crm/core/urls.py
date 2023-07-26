@@ -10,4 +10,6 @@ urlpatterns = [
     path('borrar-datos/<int:pk>', views.borrar_datos, name='borrar-datos'),
     path('insertar-datos', views.insertar_datos, name='insertar-datos'),
     path('editar-datos/<int:pk>', views.editar_datos, name='editar-datos'),
+    path('grafica-porcentaje', views.grafica_porcentaje, name='grafica-porcentaje'),
+    path('grafica-absoluto', views.grafica_absoluto, name='grafica-absoluto'),
 ]

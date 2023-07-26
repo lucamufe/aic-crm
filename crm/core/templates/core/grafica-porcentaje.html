@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<!--<div class="col-md-6 offset-md-3">-->
+{% if user.is_authenticated %}
+    <br>
+    <h4>Variación Porcentual</h4>
+    <br>
+    <img src="https://cursosytips.com/wp-content/uploads/2023/07/variacion.png" alt="Variación"  height="450px">
+    
+    
+{% else %}
+    {% url 'home' %}    
+{% endif %}
+<!--</div>-->
+{% endblock %}

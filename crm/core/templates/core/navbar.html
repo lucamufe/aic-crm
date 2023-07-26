@@ -1,6 +1,6 @@
 <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark"> <!--style="background-color: #e3f2fd;"-->
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}"><strong style="color: white;">All In Capital</strong></a>
+      <a class="navbar-brand" href="{% url 'home' %}"><strong style="color: white;">All'n Capital</strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,9 +17,16 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gráficas</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Gráficas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'grafica-porcentaje' %}">Variación</a></li>
+              <li><a class="dropdown-item" href="{% url 'grafica-absoluto' %}">Ventas y variación</a></li>
+            </ul>
           </li>
+
           {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" style="color:yellow" href="{% url 'logout' %}">Cerrar Sesión</a>
